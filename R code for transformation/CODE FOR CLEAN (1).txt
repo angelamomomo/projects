@@ -1,0 +1,5 @@
+install.packages("tidyr")
+library(tidyr)
+rawdata<-read.csv("DATANAME.csv")
+tidydata<-rawdata &>& gather(key=OrgID,value=amount,-"Major",-"Minor",-"Name")
+write.csv(tidydata, file="cleanup.csv")
